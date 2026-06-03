@@ -16,3 +16,13 @@ X_train, X_test, y_train, y_test = train_test_split(
 )
 print("데이터셋 로드 및 분할")
 df.head()
+
+# 3. KNN 기본 모델 생성 및 학습
+knn_model = KNeighborsClassifier(n_neighbors=5)
+knn_model.fit(X_train, y_train)
+
+# 4. 예측 및 정확도 출력
+y_pred = knn_model.predict(X_test)
+accuracy = accuracy_score(y_test, y_pred)
+
+print(f"기본 KNN 모델 테스트 정확도: {accuracy:.4f}")

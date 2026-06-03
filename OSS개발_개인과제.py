@@ -26,3 +26,13 @@ y_pred = knn_model.predict(X_test)
 accuracy = accuracy_score(y_test, y_pred)
 
 print(f"기본 KNN 모델 테스트 정확도: {accuracy:.4f}")
+
+# 5. 파라미터 변경
+experimental_knn = KNeighborsClassifier(n_neighbors=11)
+experimental_knn.fit(X_train, y_train)
+
+# 6. 변경된 모델 예측 및 정확도 출력
+exp_y_pred = experimental_knn.predict(X_test)
+exp_accuracy = accuracy_score(y_test, exp_y_pred)
+
+print(f"실험 KNN 모델 테스트 정확도: {exp_accuracy:.4f}")
